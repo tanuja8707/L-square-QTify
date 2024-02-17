@@ -1,0 +1,19 @@
+.searchinput {
+    height: 40px;
+    width: 30vw;
+    background-color: #FFFFFF;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.searchButton {
+    height: 46px;
+    width: 3vw;
+    background: #FFFFFF;
+    border-radius: 0px 10px 10px 0px;
+    border-left: none;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
