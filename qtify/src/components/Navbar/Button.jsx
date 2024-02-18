@@ -10,3 +10,5 @@ export default function SearchBar() {
       </div>
     )
 }
+
+// adding navbar
