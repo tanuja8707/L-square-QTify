@@ -8,6 +8,6 @@
     font-weight: 600;
     font-family: Poppins;
 }
-.feedbackButton:hover {
+.feedbackdiv button:hover {
     cursor: pointer;
 }
