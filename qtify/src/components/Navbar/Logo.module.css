@@ -1,3 +1,4 @@
 .logodiv{
-    text-align: left;
+    display: flex;
+    margin: 14px;
 }

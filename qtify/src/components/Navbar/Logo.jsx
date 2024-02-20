@@ -5,7 +5,7 @@ import styles from "./Logo.module.css";
 export default function Logo() {
     return (
     <div className={styles.logodiv}>
-        <img src={LogoImage} alt="QTrip Logo" width={50} />
+        <img src={LogoImage} alt="QTrip Logo" width={67} />
     </div>
     )
 }
