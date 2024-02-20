@@ -3,7 +3,7 @@ import styles from "./Button.module.css";
 
 export default function SearchBar() {
     return (
-      <div className={styles.feedbackdiv}>
+      <div>
         <button type="button" className={styles.feedbackButton}>
             Give Feedback
         </button>
