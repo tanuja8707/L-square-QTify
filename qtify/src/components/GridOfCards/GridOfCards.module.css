@@ -1,0 +1,39 @@
+.container {
+    padding: 8px;
+    background-color: #121212;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.follows_chip {
+    background-color: #121212 !important;
+    color: #FFFFFF !important;
+    margin-left: 8px !important;
+}
+
+.card {
+    width: 159px;
+    height: 245px;
+    margin: 16px;
+    background-color: #121212;
+}
+
+.cardbody {
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.cardimg img{
+    width: 159px;
+    height: 205px;
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.cardfooter {
+    color: #FFFFFF;
+    text-align: left;
+}
