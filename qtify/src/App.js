@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import { StyledEngineProvider } from '@mui/material/styles';
-import GridOfCards from './components/GridOfCards/GridOfCards';
+import Card from './components/Card/Card';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Navbar/>
       </StyledEngineProvider> 
       <Hero />
-      <GridOfCards  />
+      <Card  />
     </div>
   );
 }
