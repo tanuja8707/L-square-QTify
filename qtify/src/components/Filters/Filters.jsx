@@ -4,19 +4,19 @@ import Typography from "@mui/material";
 import { Box } from "@mui/material";
 import styles from "./Filters.module.css";
 
-function TabPanel(props) {
-    const {children, value, index, ...other} = props;
+// function TabPanel(props) {
+//     const {children, value, index, ...other} = props;
 
-    return (
-        <div role="tabpanel" hidden={value !== index} id={`simple-tab-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
-            {value === index && (
-                <Box sx={{p:3}}>
-                    <Typography>{ children }</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
+//     return (
+//         <div role="tabpanel" hidden={value !== index} id={`simple-tab-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
+//             {value === index && (
+//                 <Box sx={{p:3}}>
+//                     <Typography>{ children }</Typography>
+//                 </Box>
+//             )}
+//         </div>
+//     );
+// }
 
 export default function Filters({filters, selectedFilterIndex, setSelectedFilterIndex}) {
     const handleChange = (event, newValue) => {

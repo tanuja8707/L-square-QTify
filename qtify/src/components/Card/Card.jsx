@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./Card.module.css";
-import {Chip,Tooltip} from '@mui/material';
+import { Chip } from '@mui/material';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { Tooltip, Typography } from "@mui/material";
@@ -27,19 +27,18 @@ export default function Card({data, type}) {
                         </Link>
                     </Tooltip>
                 );
-
             case "song":
-                const {image, likes, title} = data;
+                const {img, likes, cardtitle} = data;
                 return (
                     <div className={styles.wrapper}>
                         <div className={styles.card}>
-                            <img src={image} alt="song" loading="lazy"  />
+                            <img src={img} alt="song" loading="lazy"  />
                             <div className={styles.banner}>
                                 <div className={styles.pill}><p>{likes} Likes</p></div>
                             </div>
                         </div>
                         <div className={styles.titleWrapper}>
-                            <p>{title}</p>
+                            <p>{cardtitle}</p>
                         </div>
                     </div>
                 )
