@@ -1,55 +1,51 @@
 import React, { useEffect } from "react";
 import styles from "./Card.module.css";
-import Chip from '@mui/material/Chip';
+import {Chip,Tooltip} from '@mui/material';
 import axios from 'axios';
-import { Typography } from "@mui/material";
-// import { useSnackbar } from "notistack";
+import { Link } from "react-router-dom";
+import { Tooltip, Typography } from "@mui/material";
 
-export default function Cards({data, type}) {
-    const [albums, setAlbums] = React.useState([]); 
-    // const { enqueueSnackbar } = useSnackbar();
+export default function Card({data, type}) {
+    const getCard = (type) => {
+        switch(type) {
+            case "album":
+                const {image, follows, title, slug, songs} = data;
+                return (
+                    <Tooltip title={`${songs.length} songs`} placement="top" arrow>
+                        <Link to={`/album/${slug}`}>
+                        <div className={styles.wrapper}>
+                            <div className={styles.card}>
+                                <img src={image} alt="Image Not Available" loading="lazy"  />
+                                <div className={styles.banner}>
+                                    <Chip label={`${follows} Follows`} size="small" className={styles.follows_chip} />
+                                </div>
+                            </div>
+                            <div className={styles.titleWrapper}>
+                                {title}
+                            </div>
+                        </div>
+                        </Link>
+                    </Tooltip>
+                );
 
-    const getCards = (data) =>{ 
-        if(type == "Top") {
-            setAlbums([...data]);
-        } else  if (type == "New") {
-            setAlbums([...data]);
-
+            case "song":
+                const {image, likes, title} = data;
+                return (
+                    <div className={styles.wrapper}>
+                        <div className={styles.card}>
+                            <img src={image} alt="song" loading="lazy"  />
+                            <div className={styles.banner}>
+                                <div className={styles.pill}><p>{likes} Likes</p></div>
+                            </div>
+                        </div>
+                        <div className={styles.titleWrapper}>
+                            <p>{title}</p>
+                        </div>
+                    </div>
+                )
+            default:
+                return <></>;
         }
-    }
-
-    useEffect(() => {
-        getCards();
-    },[])
-   
-
-    return (
-        <>
-            <div className={styles.content}> 
-            <div className={styles.title}>
-                 <div>Top Albums</div><div>Show all</div>
-             </div>
-             <div className={styles.container}>
-            {albums.map((ele) => (
-            
-              <div className={styles.card}>
-                 <div className={styles.cardbody}>
-                     <div className={styles.cardimg}>
-                         <img src={ele.image} alt="Image Not Available" height={100} width={100} />
-                     </div>
-                     <div>
-                         <Chip label={`${ele.follows}`+' Follows'} className={styles.follows_chip} /> 
-                     </div>
-                 </div>
-                 <div className={styles.cardfooter}>
-                     {ele.title}
-                 </div>
-              </div>
-             
-              )
-             )}
-              </div>
-            </div>
-       </>
-    )
+    };
+    return getCard(type);  
 }
