@@ -7,18 +7,24 @@ import {
 import './index.css';
 import App from './App';
 import HomePage from './pages/HomePage/HomePage';
+import AlbumPage from "./components/AlbumPage/AlbumPage";
 
-const router = createBrowserRouter([{
+const router = createBrowserRouter([
+  {
   path: "/", element: <App />, children : [
     { path: "/", element: <HomePage /> },
-    // { path: "/album/:albumId", element: <AlbumPage /> },
+    { path: "/album/:albumId", element: <AlbumPage /> },
 
   ],
 }])
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <RouterProvider route={router} />
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <RouterProvider route={router} />
+// );
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function

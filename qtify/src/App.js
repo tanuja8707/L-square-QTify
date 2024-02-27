@@ -10,18 +10,20 @@ import { fetchNewAlbums, fetchTopAlbums, fetchSongs } from './api/api';
 function App() {
   const [data, setData] = useState({});
 
-  const generateData = (key, source) => {
-    source().then((data) => {
-      setData((prevState) => {
-        return {...prevState, [key]:data};
-      });
-    });
+  const generateData = async (key, source) => {
+    try {
+      const data = await source();
+      setData((prevState) => ({ ...prevState, [key]: data }));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {
     generateData("topAlbums", fetchTopAlbums);
     generateData("newAlbums", fetchNewAlbums);
     generateData("songs", fetchSongs);
+    console.log("in app.js")
   })
 
   const { topAlbums = [], newAlbums = [], songs = [] } = data;
