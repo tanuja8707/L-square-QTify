@@ -8,7 +8,7 @@ import Filters from "../Filters/Filters";
 export default function Section({title, data, filterSource, type}) {
     const [filters,setFilters] = useState([{key : "all", label: "All"}]);
     const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
-    const [carouselToggle, setCarouselToggle] = useState(true);
+    const [carouselToggle, setCarouselToggle] = useState(false);
     
     const handleToggle = () => {
         setCarouselToggle((prevState) => !prevState);
@@ -47,9 +47,9 @@ export default function Section({title, data, filterSource, type}) {
             <div className={styles.cardsWrapper}>
                 {!carouselToggle ? (
                     <div className={styles.wrapper}>
-                        {cardsToRender.map((ele,i) => (
-                            <Card data={ele} type={type} key={i} />
-                        ))}
+                         {cardsToRender.map((card) => (
+                                <Card data={card} type={type} key={card.id} />
+                            ))}
                     </div>
                 ) : (
                     <Carousel data={cardsToRender} renderComponent={(card_data) => <Card data={card_data} type={type} />} />
