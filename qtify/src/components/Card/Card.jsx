@@ -21,7 +21,7 @@ export default function Card({data, type}) {
                                 </div>
                             </div>
                             <div className={styles.titleWrapper}>
-                                {title}
+                            <p>{title}</p>
                             </div>
                         </div>
                         </Link>

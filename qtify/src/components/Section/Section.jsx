@@ -8,7 +8,7 @@ import Filters from "../Filters/Filters";
 export default function Section({title, data, filterSource, type}) {
     const [filters,setFilters] = useState([{key : "all", label: "All"}]);
     const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
-    const [carouselToggle, setCarouselToggle] = useState(false);
+    const [carouselToggle, setCarouselToggle] = useState(true);
     
     const handleToggle = () => {
         setCarouselToggle((prevState) => !prevState);
@@ -29,7 +29,7 @@ export default function Section({title, data, filterSource, type}) {
         showFilters && selectedFilterIndex !== 0 
         ? card.genre.key === filters[selectedFilterIndex].key : card );
 
-    console.log(data,"section data")
+    console.log(data,"section data");
     return (
       <div className={styles.content}>  
         <div className={styles.header}>
@@ -46,8 +46,8 @@ export default function Section({title, data, filterSource, type}) {
         {data.length === 0 ? ( <CircularProgress /> ) : (
             <div className={styles.cardsWrapper}>
                 {!carouselToggle ? (
-                    <div className={styles.wrapper}>
-                         {cardsToRender.map((card) => (
+                    <div className={styles.wrapper} >
+                         {cardsToRender.map((card,i) => (
                                 <Card data={card} type={type} key={card.id} />
                             ))}
                     </div>

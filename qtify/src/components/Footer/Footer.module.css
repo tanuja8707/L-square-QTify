@@ -17,8 +17,20 @@
     border: 1px solid #FFFFFF;
 }
 .accordionWrapper {
-    background-color: #121212;
+    border-radius: 10px;
 }
 .accordionIcon {
     fill: #FFFFFF;
+}
+.accordionContent{
+    text-align: left;
+}
+.musicPlayer {
+    color: #FFFFFF;
+    position: sticky;
+    height: 130px;
+    z-index: 111;
+    background-color: #121212;
+    bottom: 0;
+    border-top: 1px solid#FFFFFF;
 }

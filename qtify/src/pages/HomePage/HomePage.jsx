@@ -8,13 +8,13 @@ import React from "react";
 export default function HomePage() {
     const { data } = useOutletContext();
     const { newAlbums, topAlbums, songs } = data;
-
+    console.log(data,"data from homepage")
     return (
         <>
             <Hero />
             <div>
                 <Section title="Top Albums" data={topAlbums} type="album" />
-                <Section title="New Albums" data={newAlbums} type="album" />
+                <div className={styles.songsSection}><Section title="New Albums" data={newAlbums} type="album" /></div>
                 <div className={styles.songsSection}><Section title="Songs" data={songs} type="song" filterSource={fetchFilters} /></div>
 
             </div>

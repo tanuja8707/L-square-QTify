@@ -18,7 +18,7 @@ export default function Filters({ filters, selectedFilterIndex, setSelectedFilte
 
     return (
         <div className={styles.filterWrapper}>
-            <Tabs value={selectedFilterIndex} onChange={handleChange} aria-label="basic tabs example" TabIndicatorProps={{ style: { backgroundColor: "var(--color-primary)" } }}>
+            <Tabs value={selectedFilterIndex} onChange={handleChange} aria-label="basic tabs example">
                 {filters.map((ele, i) => (
                     <Tab className={styles.tab} label={ele.label} key={i} {...a11yProps(i)} />
                 ))}

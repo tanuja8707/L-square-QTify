@@ -13,6 +13,8 @@ const Controls = ({data}) => {
     useEffect(() => {
         swiper.slideTo(0)
     },[data]);
+
+    return <></>;
 }
 
 export default function Carousel({data, renderComponent}) {
