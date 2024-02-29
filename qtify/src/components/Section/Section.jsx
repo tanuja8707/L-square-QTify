@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
@@ -25,15 +25,18 @@ export default function Section({title, data, filterSource, type}) {
 
     const showFilters = filters.length > 1;
 
-    const cardsToRender = data.filter((card) => showFilters && selectedFilterIndex !== 0 ? card.genre.key === filters[selectedFilterIndex].key : card);
+    const cardsToRender = data.filter((card) =>  
+        showFilters && selectedFilterIndex !== 0 
+        ? card.genre.key === filters[selectedFilterIndex].key : card );
 
+    console.log(data,"section data")
     return (
-      <div>  
+      <div className={styles.content}>  
         <div className={styles.header}>
-            <h3>{ title }</h3>
-            <h4 className={styles.toggleText} onClick={handleToggle}> 
+            <Typography>{ title }</Typography>
+            <Typography className={styles.toggleText} onClick={handleToggle}> 
                 {!carouselToggle ? "Collapse All" : "Show All"}
-            </h4>
+            </Typography>
         </div>
         {showFilters && (
             <div className={styles.filterWrapper}>
@@ -44,15 +47,15 @@ export default function Section({title, data, filterSource, type}) {
             <div className={styles.cardsWrapper}>
                 {!carouselToggle ? (
                     <div className={styles.wrapper}>
-                        {cardsToRender.map((ele) => (
-                            <Card data={ele} type={type} />
+                        {cardsToRender.map((ele,i) => (
+                            <Card data={ele} type={type} key={i} />
                         ))}
                     </div>
                 ) : (
-                    <Carousel data={cardsToRender} renderComponent={(data) => <Card data={data} type={type} />} />
+                    <Carousel data={cardsToRender} renderComponent={(card_data) => <Card data={card_data} type={type} />} />
                 )}
             </div>
         )}
       </div>
-    )
+    );
 }

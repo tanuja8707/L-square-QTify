@@ -1,3 +1,12 @@
 .tab {
+    color: #FFFFFF;
+}
+
+.tab:active {
+    color: #34C94B;
+    border-bottom: 2px solid #34C94B;
+}
+
+.filterWrapper {
     
 }

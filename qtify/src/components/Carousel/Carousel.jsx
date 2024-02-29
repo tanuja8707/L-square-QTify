@@ -19,7 +19,7 @@ export default function Carousel({data, renderComponent}) {
     return (
         <div>
             <Swiper style={{padding : "0px 20px"}}
-            initialSlide={0} modules={[Navigation]} slidesPreview={"auto"} spaceBetween={40} allowTouchMove>
+            initialSlide={0} modules={[Navigation]} slidesPerView={'auto'} spaceBetween={40} allowTouchMove>
                 <Controls data={data} />
                 <CarouselLeftNavigation />
                 <CarouselRightNavigation />

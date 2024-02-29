@@ -1,9 +1,23 @@
 .header {
+    display: flex;
+    justify-content: space-between;
+}
 
+.content {
+    padding: 8px;
+    background-color: #121212;
+    color: #FFFFFF;
 }
 
 .filterWrapper{
 
 }
-.cardsWrapper{}
-.wrapper{}
+.cardsWrapper{
+    
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 16px;
+}

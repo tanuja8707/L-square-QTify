@@ -24,7 +24,7 @@ function App() {
     generateData("newAlbums", fetchNewAlbums);
     generateData("songs", fetchSongs);
     console.log("in app.js")
-  })
+  },[])
 
   const { topAlbums = [], newAlbums = [], songs = [] } = data;
 

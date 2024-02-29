@@ -1,7 +1,16 @@
-.container {
-    display: flex;
+.wrapper {
+    display: flex !important;
     flex-wrap: wrap;
     margin-bottom: 16px;
+    height: 232px;
+    width: 159px;
+    padding: 16px;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.wrapper a {
+    text-decoration: none !important;
 }
 
 .content {
@@ -16,10 +25,18 @@
 }
 
 .card {
+    height: 205px;
     width: 159px;
-    height: 245px;
-    margin: 16px;
-    background-color: #121212;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #121212;
+    text-align: left;
+}
+
+.card img {
+    width: 159px;
+    height: 170px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .cardbody {

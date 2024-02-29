@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import styles from "./Card.module.css";
 import { Chip } from '@mui/material';
-import axios from 'axios';
 import { Link } from "react-router-dom";
-import { Tooltip, Typography } from "@mui/material";
+import { Tooltip } from "@mui/material";
 
-export default function Card({data, type}) {
+export default function Card({data, type, key}) {
+    console.log(data,"card data")
     const getCard = (type) => {
         switch(type) {
             case "album": {
