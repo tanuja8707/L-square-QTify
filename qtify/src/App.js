@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { Outlet } from "react-router-dom";
 import { fetchNewAlbums, fetchTopAlbums, fetchSongs } from './api/api';
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <StyledEngineProvider injectFirst>
         <Navbar searchData={[...topAlbums, ...newAlbums]}  />
         <Outlet context={{ data: {topAlbums, newAlbums, songs} }} />
+        <Footer/>
       </StyledEngineProvider> 
       
     </div>

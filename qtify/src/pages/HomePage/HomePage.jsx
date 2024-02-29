@@ -15,7 +15,7 @@ export default function HomePage() {
             <div>
                 <Section title="Top Albums" data={topAlbums} type="album" />
                 <Section title="New Albums" data={newAlbums} type="album" />
-                <Section title="Songs" data={songs} type="song" filterSource={fetchFilters} />
+                <div className={styles.songsSection}><Section title="Songs" data={songs} type="song" filterSource={fetchFilters} /></div>
 
             </div>
         </>

@@ -6,11 +6,14 @@
     width: 159px;
     padding: 16px;
     color: #FFFFFF;
-    justify-content: center;
 }
 
 .wrapper a {
     text-decoration: none !important;
+}
+
+.titleWrapper {
+    text-align: left;
 }
 
 .content {

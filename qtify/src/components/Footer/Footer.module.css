@@ -1,0 +1,24 @@
+.footerWrapper {
+    background-color: #121212;
+    padding:32px;
+}
+
+.title {
+    font-size: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.accordionHeader {
+    background-color: #121212;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+}
+.accordionWrapper {
+    background-color: #121212;
+}
+.accordionIcon {
+    fill: #FFFFFF;
+}
