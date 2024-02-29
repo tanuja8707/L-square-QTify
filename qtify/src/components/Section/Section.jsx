@@ -8,7 +8,7 @@ import Filters from "../Filters/Filters";
 export default function Section({title, data, filterSource, type}) {
     const [filters,setFilters] = useState([{key : "all", label: "All"}]);
     const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
-    const [carouselToggle, setCarouselToggle] = useState(true);
+    const [carouselToggle, setCarouselToggle] = useState(false);
     
     const handleToggle = () => {
         setCarouselToggle((prevState) => !prevState);
@@ -23,19 +23,22 @@ export default function Section({title, data, filterSource, type}) {
         }
     },[]);
 
+
+
     const showFilters = filters.length > 1;
 
     const cardsToRender = data.filter((card) =>  
         showFilters && selectedFilterIndex !== 0 
         ? card.genre.key === filters[selectedFilterIndex].key : card );
 
+   
     console.log(data,"section data");
     return (
       <div className={styles.content}>  
         <div className={styles.header}>
             <Typography>{ title }</Typography>
             <Typography className={styles.toggleText} onClick={handleToggle}> 
-                {!carouselToggle ? "Collapse All" : "Show All"}
+                {!carouselToggle ? "Show All" : "Collapse All"}
             </Typography>
         </div>
         {showFilters && (
@@ -55,7 +58,7 @@ export default function Section({title, data, filterSource, type}) {
                     <Carousel data={cardsToRender} renderComponent={(card_data) => <Card data={card_data} type={type} />} />
                 )}
             </div>
-        )}
+         )} 
       </div>
     );
 }
