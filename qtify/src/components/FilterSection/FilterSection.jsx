@@ -1,8 +1,7 @@
-// import React, { useState } from 'react'
-import styles from './FilterSection.module.css'
-import { Box, CircularProgress } from '@mui/material'
+import React, { useState } from 'react'
+import styles from './FilterSection.module.css';
+import { Box, CircularProgress } from '@mui/material';
 import Card from "../Card/Card";
-// import CustomTabPanel from '../BasicTabs/BasicTabs'
 import Carousel from "../Carousel/Carousel";
 import BasicTabs from '../BasicTabs/BasicTabs';
 
@@ -31,11 +30,11 @@ const FilterSection = ({
       ) :
         ( 
           <div className={styles.cardsWrapper}>
-            <Carousel data={filteredDataValues} renderCardComponent={(data) => <Card data={data} type={type} />} />
+            <Carousel data={filteredDataValues} renderCardComponent={(data) => <Card data={data} type={type} key={data.id} />} />
           </div>
         )}
     </div>
   )
 }
 
-export default FilterSection
+export default FilterSection;

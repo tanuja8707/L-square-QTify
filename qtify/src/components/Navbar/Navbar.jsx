@@ -9,7 +9,7 @@ export default function Navbar(){
     return(
         <>
             <nav className={styles.navbar}>
-                <div className={styles.logoDiv}><img  src={Logo} alt="logo" width={67}/></div>
+                <div className={styles.logoDiv}><img  src={Logo} alt="Qtify logo" width={67}/></div>
                  <Search search={"Search a song of your choice"}/>
                 <Button children="Give Feedback"/>
             </nav>
