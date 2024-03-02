@@ -1,34 +1,34 @@
-import React, {useEffect, useState} from 'react';
-import styles from "./Carousel.module.css";
-import { register } from 'swiper/element';
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Pagination } from 'swiper/modules';
-import CarouselLeftNavigation from "./CarouselLeftNavigation";
-import CarouselRightNavigation from "./CarouselRightNavigation";
-import "swiper/css";
+import React, { useEffect } from 'react'
+import 'swiper/css'
+import {Navigation} from 'swiper/modules'
+import {Swiper,useSwiper,SwiperSlide} from 'swiper/react'
+import styles from './Carousel.module.css'
+import CarouselLeft from './CarouselLeft/CarouselLeft'
+import CarouselRight from './CarouselRight/CarouselRight'
 
 const Controls = ({data}) => {
-    const swiper = useSwiper();
-
+    let swiper = useSwiper();
+    console.log(swiper)
     useEffect(() => {
-        swiper.slideTo(0)
-    },[data]);
+        // swiper.slideTo(0)
+    },[data])
 
-    return <></>;
+    return <></>
 }
 
-export default function Carousel({data, renderComponent}) {
-    return (
-        <div>
-            <Swiper style={{padding : "0px 20px"}}
-            initialSlide={0} modules={[Navigation]} slidesPerView={'auto'} spaceBetween={40} allowTouchMove>
-                <Controls data={data} />
-                <CarouselLeftNavigation />
-                <CarouselRightNavigation />
-                {data.map((ele) => {
-                    <SwiperSlide>{renderComponent(ele)}</SwiperSlide>
-                })}
-            </Swiper>
-        </div>
-    )
+const Carousel = ({data,renderCardComponent}) => {
+  return (
+    <div className={styles.wrapper}>
+        <Swiper initialSlide = {0} modules={{Navigation}} slidesPerView={'auto'} spaceBetween={40} allowTouchMove>
+            <Controls data={data} />
+            <CarouselLeft />
+            <CarouselRight />
+            {data.map(item => (
+                <SwiperSlide>{renderCardComponent(item)}</SwiperSlide>
+            ))}
+        </Swiper>
+    </div>
+  )
 }
+
+export default Carousel

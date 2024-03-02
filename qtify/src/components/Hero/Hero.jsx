@@ -1,18 +1,18 @@
-import React from "react";
-import styles from "./Hero.module.css";
-import HeroImg from "../../assets/hero_headphones.png";
-
-
-export default function Hero() {
-    return (
-        <div className={styles.Hero}>
-            <div className={styles.textsection}>
-                <div>100 Thousand Songs, ad-free </div>
-                <div>Over thousands podcast episodes</div>
+import React from 'react'
+import HeroImage from '../../assets/vibrating-headphone.png'
+import styles from './Hero.module.css'
+const Hero = () => {
+  return (
+    <>  
+        <section className={styles.Hero}>
+            <div className={styles.HeroTitle}>
+                <h1>100 Thousand Songs, ad-free</h1>
+                <h1>Over thousands podcast episodes</h1>
             </div>
-            <div className={styles.rightcontent}>
-                <img src={HeroImg} alt="Hero Image" height={212} width={212} />
-            </div>
-        </div>
-    )
+                <img className={styles.HeroImage} src={HeroImage} alt='headphone'/>
+        </section>
+    </>
+  )
 }
+
+export default Hero
